@@ -49,10 +49,13 @@ namespace DreamGallery.Service.Services
 
         public async Task<List<ArtworkForResultDto>> GetAllAsync()
         {
+            var Purchase = new PurchaseService();
+            //var PurchasedArts = (await Purchase.GetAllPurchasedArtsAsync()).Select(e => e.ArtistId);
             var GetALlData = await ArtworkRepository.SelectAllAsync();
             List<ArtworkForResultDto> ls = new List<ArtworkForResultDto>();
             foreach (var item in GetALlData)
             {
+                
                 ArtworkForResultDto dto = new ArtworkForResultDto()
                 {
                     Id = item.Id,

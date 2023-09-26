@@ -1,22 +1,32 @@
 [
   {
-    "Title": "Mona",
+    "Title": "Arrow",
     "ArtistId": 2,
-    "Desciption": "Liza",
-    "Price": 1231.0,
-    "Category": 4,
+    "Desciption": "asda",
+    "Price": 321321.0,
+    "Category": 2,
     "Id": 1,
-    "CreatedAt": "2023-09-26T09:25:42.8685022Z",
-    "UpdatedAt": "2023-09-26T09:25:42.8685033Z"
+    "CreatedAt": "2023-09-26T18:02:36.9517304Z",
+    "UpdatedAt": "2023-09-26T18:02:36.9517311Z"
   },
   {
-    "Title": "salom",
+    "Title": "Amir Temur",
     "ArtistId": 2,
-    "Desciption": "hey",
-    "Price": 5555.0,
+    "Desciption": "1336",
+    "Price": 4000.0,
     "Category": 3,
     "Id": 2,
-    "CreatedAt": "2023-09-26T09:28:11.75735Z",
-    "UpdatedAt": "2023-09-26T09:28:11.7573501Z"
+    "CreatedAt": "2023-09-26T18:54:41.4381064Z",
+    "UpdatedAt": "2023-09-26T18:54:41.4381067Z"
+  },
+  {
+    "Title": "Alisher Navoiy",
+    "ArtistId": 3,
+    "Desciption": "1441",
+    "Price": 4000.0,
+    "Category": 1,
+    "Id": 3,
+    "CreatedAt": "2023-09-26T18:56:19.706368Z",
+    "UpdatedAt": "2023-09-26T18:56:19.7063681Z"
   }
 ]

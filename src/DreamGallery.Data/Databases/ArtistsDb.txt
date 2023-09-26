@@ -22,5 +22,17 @@
     "Id": 2,
     "CreatedAt": "2023-09-26T09:22:27.1755744Z",
     "UpdatedAt": "2023-09-26T09:22:27.1755744Z"
+  },
+  {
+    "FirstName": "Artist",
+    "LastName": "artist",
+    "Email": "5",
+    "Password": "5",
+    "PhoneNumber": null,
+    "Balance": 0.0,
+    "Role": 2,
+    "Id": 3,
+    "CreatedAt": "2023-09-26T18:55:46.5174318Z",
+    "UpdatedAt": "2023-09-26T18:55:46.517432Z"
   }
 ]
