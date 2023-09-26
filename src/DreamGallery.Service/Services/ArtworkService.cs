@@ -8,7 +8,7 @@ using DreamGallery.Service.Interfaces;
 
 namespace DreamGallery.Service.Services
 {
-    internal class ArtworkService : IArtworkService
+    public class ArtworkService : IArtworkService
     {
         private long _id;
         Repository<Artwork> ArtworkRepository = new Repository<Artwork>();
@@ -29,7 +29,6 @@ namespace DreamGallery.Service.Services
                 Category = dto.Category,
                 Desciption = dto.Desciption,
                 Price = dto.Price,
-                Year = dto.Year,
             };
             await ArtworkRepository.InsertAsync(Artwork);
 
@@ -41,7 +40,6 @@ namespace DreamGallery.Service.Services
                 Category = dto.Category,
                 Desciption = dto.Desciption,
                 Price = dto.Price,
-                Year = dto.Year,
                 
 
             };
@@ -57,13 +55,12 @@ namespace DreamGallery.Service.Services
             {
                 ArtworkForResultDto dto = new ArtworkForResultDto()
                 {
-                    Id = _id,
+                    Id = item.Id,
                     ArtistId = item.ArtistId,
                     Title = item.Title,
                     Category = item.Category,
                     Desciption = item.Desciption,
                     Price = item.Price,
-                    Year = item.Year,
 
 
                 };
@@ -82,13 +79,12 @@ namespace DreamGallery.Service.Services
             }
             var result = new ArtworkForResultDto()
             {
-                Id = _id,
+                Id = GetData.Id,
                 ArtistId = GetData.ArtistId,
                 Title = GetData.Title,
                 Category = GetData.Category,
                 Desciption = GetData.Desciption,
                 Price = GetData.Price,
-                Year = GetData.Year,
 
             };
             return result;
@@ -114,13 +110,12 @@ namespace DreamGallery.Service.Services
             }
             var Artwork = new Artwork()
             {
-                Id = _id,
+                Id = Check.Id,
                 ArtistId = Check.ArtistId,
                 Title = dto.Title,
                 Category = Check.Category,
                 Desciption = dto.Desciption,
                 Price = dto.Price,
-                Year = dto.Year,
 
 
             };
@@ -128,13 +123,12 @@ namespace DreamGallery.Service.Services
 
             var result = new ArtworkForResultDto()
             {
-                Id = _id,
+                Id = dto.Id,
                 ArtistId = dto.ArtistId,
                 Title = dto.Title,
                 Category = dto.Category,
                 Desciption = dto.Desciption,
                 Price = dto.Price,
-                Year = dto.Year,
 
             };
 

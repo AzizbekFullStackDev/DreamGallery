@@ -24,5 +24,18 @@
     "Id": 2,
     "CreatedAt": "2023-09-26T06:46:02.2076958Z",
     "UpdatedAt": "2023-09-26T06:46:02.2076959Z"
+  },
+  {
+    "FirstName": "Jimmy",
+    "LastName": "Tommy",
+    "Email": "2",
+    "Password": "2",
+    "PhoneNumber": "12112",
+    "Balance": 21312.0,
+    "PaymentMethod": 1,
+    "Role": 1,
+    "Id": 3,
+    "CreatedAt": "2023-09-26T07:34:05.5618464Z",
+    "UpdatedAt": "2023-09-26T09:05:56.1039954Z"
   }
 ]

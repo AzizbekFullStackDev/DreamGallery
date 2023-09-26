@@ -10,5 +10,17 @@
     "Id": 1,
     "CreatedAt": "2023-09-26T06:46:15.0487713Z",
     "UpdatedAt": "2023-09-26T06:46:15.0487715Z"
+  },
+  {
+    "FirstName": "1",
+    "LastName": "1",
+    "Email": "1",
+    "Password": "1",
+    "PhoneNumber": null,
+    "Balance": 0.0,
+    "Role": 2,
+    "Id": 2,
+    "CreatedAt": "2023-09-26T09:22:27.1755744Z",
+    "UpdatedAt": "2023-09-26T09:22:27.1755744Z"
   }
 ]

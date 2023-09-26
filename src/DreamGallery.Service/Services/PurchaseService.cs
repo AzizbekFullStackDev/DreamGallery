@@ -35,6 +35,12 @@ namespace DreamGallery.Service.Services
             }
         }
 
+        public async Task<List<Purchase>> GetMyCollectionAsync(long Id)
+        {
+            ArtworkService artworkService = new ArtworkService();
+            var AllArtwork = (await PurchaseRepository.SelectAllAsync()).Where(e => e.UserId == Id).ToList();
+            return AllArtwork;
+        }
     }
         
     
