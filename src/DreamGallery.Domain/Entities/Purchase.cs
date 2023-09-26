@@ -6,6 +6,6 @@ namespace DreamGallery.Domain.Entities
     {
         public int UserId { get; set; }
         public int ArtworkId { get; set; }
-        public int PurchaseDate { get; set; }
+        public DateTime PurchaseDate { get; set; }
     }
 }
