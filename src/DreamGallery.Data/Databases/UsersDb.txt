@@ -1,13 +1,28 @@
 [
   {
-    "FirstName": "Test",
-    "LastName": "Test",
-    "Email": "Test",
-    "Password": "Test",
-    "Balance": 0.0,
-    "PaymentMethod": 1,
+    "FirstName": "Azizbek",
+    "LastName": "Muzaffarov",
+    "Email": "salomat",
+    "Password": "1234555",
+    "PhoneNumber": "1234555",
+    "Balance": 3000.40,
+    "PaymentMethod": 2,
+    "Role": 1,
     "Id": 1,
-    "CreatedAt": "2023-09-26T03:39:00.3469448Z",
-    "UpdatedAt": "2023-09-26T03:39:00.3469555Z"
+    "CreatedAt": "2023-09-26T06:45:34.9430378Z",
+    "UpdatedAt": "2023-09-26T06:45:34.9430381Z"
+  },
+  {
+    "FirstName": "asda",
+    "LastName": "das",
+    "Email": "das",
+    "Password": "das",
+    "PhoneNumber": "das",
+    "Balance": 432.0,
+    "PaymentMethod": 4,
+    "Role": 1,
+    "Id": 2,
+    "CreatedAt": "2023-09-26T06:46:02.2076958Z",
+    "UpdatedAt": "2023-09-26T06:46:02.2076959Z"
   }
 ]

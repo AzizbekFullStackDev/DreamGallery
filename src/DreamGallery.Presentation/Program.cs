@@ -1,5 +1,6 @@
 ﻿using DreamGallery.Data.Repositories;
 using DreamGallery.Domain.Entities;
+using DreamGallery.Presentation.Presentation;
 using DreamGallery.Service.DTOs.Artist;
 using DreamGallery.Service.Services;
 
@@ -20,7 +21,7 @@ namespace DreamGallery.Presentation
                 Password = "Test",
             };
             await artist.InsertAsync(Creation);*/
-            ArtistService artistService = new ArtistService();
+/*            ArtistService artistService = new ArtistService();
             ArtistForCreationDto artistForCreationDto = new ArtistForCreationDto()
             {
                 Balance = 111,
@@ -29,7 +30,9 @@ namespace DreamGallery.Presentation
                 Email = "Salomaaa@",
                 Password = "Donasasdase",
             };
-            var result = await artistService.CreateAsync(artistForCreationDto);
+            var result = await artistService.CreateAsync(artistForCreationDto);*/
+            UserInterface userInterface = new UserInterface();
+            await userInterface.RunCodeAsync();
         }
     }
 }

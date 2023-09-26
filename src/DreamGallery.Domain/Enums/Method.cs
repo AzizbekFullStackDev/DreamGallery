@@ -6,6 +6,5 @@
         PayPal = 2,
         Click = 3,
         Oson = 4,
-        BankTransfer = 5,
     }
 }

@@ -28,6 +28,7 @@ namespace DreamGallery.Service.Services
                 Email = dto.Email,
                 Password = dto.Password,
                 Balance = dto.Balance,
+                PhoneNumber = dto.PhoneNumber,
                 PaymentMethod = dto.PaymentMethod,
                 Role = Domain.Enums.Roles.User,
             };
@@ -41,6 +42,7 @@ namespace DreamGallery.Service.Services
                 Email = dto.Email,
                 Password= dto.Password,
                 Balance= dto.Balance,
+                PhoneNumber = dto.PhoneNumber,
                 PaymentMethod = dto.PaymentMethod,
                 Role = Domain.Enums.Roles.User,
 
@@ -63,6 +65,7 @@ namespace DreamGallery.Service.Services
                     Email = item.Email,
                     Password = item.Password,
                     Balance = item.Balance,
+                    PhoneNumber = item.PhoneNumber,
                     PaymentMethod = item.PaymentMethod,
                     Role = Domain.Enums.Roles.User,
 
@@ -87,6 +90,7 @@ namespace DreamGallery.Service.Services
                 LastName = GetData.LastName,
                 Email = GetData.Email,
                 Password = GetData.Password,
+                PhoneNumber = GetData.PhoneNumber,
                 Balance = GetData.Balance,
                 PaymentMethod = GetData.PaymentMethod,
                 Role = Domain.Enums.Roles.User,
@@ -122,6 +126,7 @@ namespace DreamGallery.Service.Services
                 Password = dto.Password,
                 Balance = dto.Balance,
                 PaymentMethod = dto.PaymentMethod,
+                PhoneNumber = dto.PhoneNumber,
                 UpdatedAt = DateTime.UtcNow,
                 CreatedAt = Check.CreatedAt,
                 Role = Domain.Enums.Roles.User,
@@ -135,6 +140,7 @@ namespace DreamGallery.Service.Services
                 LastName = dto.LastName,
                 Email = dto.Email,
                 Password = dto.Password,
+                PhoneNumber = dto.PhoneNumber,
                 Balance = dto.Balance,
                 PaymentMethod = dto.PaymentMethod,
                 Role = Domain.Enums.Roles.User,
