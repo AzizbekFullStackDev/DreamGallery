@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Wf6CmEPqqxsX3D6zkcpQ1r9MIBxT1kuBgfvaFu57eXFxQClaR4qfqxGF6xQ6y09LFgdUFgTJAnCPVNJrg0o77w==",
+  "success": true,
+  "projectFilePath": "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Service\\DreamGallery.Service.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Azizbek\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

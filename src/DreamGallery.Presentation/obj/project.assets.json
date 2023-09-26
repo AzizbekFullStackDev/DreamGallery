@@ -1,0 +1,176 @@
+{
+  "version": 3,
+  "targets": {
+    "net7.0": {
+      "Newtonsoft.Json/13.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Newtonsoft.Json.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DreamGallery.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DreamGallery.Domain": "1.0.0",
+          "Newtonsoft.Json": "13.0.3"
+        },
+        "compile": {
+          "bin/placeholder/DreamGallery.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamGallery.Data.dll": {}
+        }
+      },
+      "DreamGallery.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/DreamGallery.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamGallery.Domain.dll": {}
+        }
+      },
+      "DreamGallery.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "DreamGallery.Data": "1.0.0",
+          "DreamGallery.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DreamGallery.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DreamGallery.Service.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Newtonsoft.Json/13.0.3": {
+      "sha512": "HrC5BXdl00IP9zeV+0Z848QWPAoCr9P3bDEZguI+gkLcBKAOxix/tLEAAHC+UvDNPv4a2d18lOReHMOagPa+zQ==",
+      "type": "package",
+      "path": "newtonsoft.json/13.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/net20/Newtonsoft.Json.dll",
+        "lib/net20/Newtonsoft.Json.xml",
+        "lib/net35/Newtonsoft.Json.dll",
+        "lib/net35/Newtonsoft.Json.xml",
+        "lib/net40/Newtonsoft.Json.dll",
+        "lib/net40/Newtonsoft.Json.xml",
+        "lib/net45/Newtonsoft.Json.dll",
+        "lib/net45/Newtonsoft.Json.xml",
+        "lib/net6.0/Newtonsoft.Json.dll",
+        "lib/net6.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.0/Newtonsoft.Json.dll",
+        "lib/netstandard1.0/Newtonsoft.Json.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.xml",
+        "lib/netstandard2.0/Newtonsoft.Json.dll",
+        "lib/netstandard2.0/Newtonsoft.Json.xml",
+        "newtonsoft.json.13.0.3.nupkg.sha512",
+        "newtonsoft.json.nuspec",
+        "packageIcon.png"
+      ]
+    },
+    "DreamGallery.Data/1.0.0": {
+      "type": "project",
+      "path": "../DreamGallery.Data/DreamGallery.Data.csproj",
+      "msbuildProject": "../DreamGallery.Data/DreamGallery.Data.csproj"
+    },
+    "DreamGallery.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DreamGallery.Domain/DreamGallery.Domain.csproj",
+      "msbuildProject": "../DreamGallery.Domain/DreamGallery.Domain.csproj"
+    },
+    "DreamGallery.Service/1.0.0": {
+      "type": "project",
+      "path": "../DreamGallery.Service/DreamGallery.Service.csproj",
+      "msbuildProject": "../DreamGallery.Service/DreamGallery.Service.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net7.0": [
+      "DreamGallery.Data >= 1.0.0",
+      "DreamGallery.Service >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Azizbek\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Presentation\\DreamGallery.Presentation.csproj",
+      "projectName": "DreamGallery.Presentation",
+      "projectPath": "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Presentation\\DreamGallery.Presentation.csproj",
+      "packagesPath": "C:\\Users\\Azizbek\\.nuget\\packages\\",
+      "outputPath": "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Presentation\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Azizbek\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net7.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "projectReferences": {
+            "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Data\\DreamGallery.Data.csproj": {
+              "projectPath": "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Data\\DreamGallery.Data.csproj"
+            },
+            "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Service\\DreamGallery.Service.csproj": {
+              "projectPath": "D:\\Net new Source Codes\\DreamGallery\\src\\DreamGallery.Service\\DreamGallery.Service.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net7.0": {
+        "targetAlias": "net7.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

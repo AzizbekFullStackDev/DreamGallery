@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Databases\ArtworksDb.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="Databases\ArtworksDb.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DreamGallery.Domain\DreamGallery.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
