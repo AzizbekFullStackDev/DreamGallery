@@ -24,7 +24,6 @@ namespace DreamGallery.Presentation.Presentation
                 switch(num)
                 {
                     case 1:
-                        RegistrationService registrationService = new RegistrationService();
                         Registration registration = new Registration();
                         Console.WriteLine("Enter Your Firstname");
                         registration.FirstName = Console.ReadLine();
@@ -102,8 +101,8 @@ namespace DreamGallery.Presentation.Presentation
                                     Console.WriteLine("7 => Log out");
                                     int num3 = int.Parse(Console.ReadLine());
                                     ArtworkService artService = new ArtworkService();
-                                    ArtistService artistService = new ArtistService();
-                                    var selected = await artistService.GetAllAsync();
+                                    ArtistService artistService2 = new ArtistService();
+                                    var selected = await artistService2.GetAllAsync();
                                     var AllArtworks = await artService.GetAllAsync();
                                     switch(num3)
                                     {
@@ -150,6 +149,25 @@ namespace DreamGallery.Presentation.Presentation
                                             var result2 = await purchaseService.PurchaseAsync(purchase);
                                             var GetArtWorkname = AllArtworks.FirstOrDefault(e => e.Id == result2.ArtworkId);
                                             Console.WriteLine("You successfully purchased " + result2.ArtworkId + " Artwork.");
+
+                                            var artists = new ArtistService(); 
+                                            var SelectedArtist = (await artists.GetAllAsync()).FirstOrDefault(e => e.Id == GetArtWorkname.ArtistId);
+
+                                            PurchaseService ServiceForPurchase = new PurchaseService();
+                                            var SoldArtworks = await ServiceForPurchase.GetMyAllPurchasedArtsAsync(SelectedArtist.Id);
+                                            var Balance = SelectedArtist.Balance;
+                                            foreach (var art in SoldArtworks)
+                                            {
+                                                Balance += art.Price;
+                                            }
+                                            var ArtistResult = new ArtistForUpdateDto()
+                                            {
+                                                Id = SelectedArtist.Id,
+                                                Balance = Balance,
+                                            };
+                                            var UpdateBalance = await artists.UpdateBalanceAsync(ArtistResult);
+
+
                                             break;
                                             case 4:
                                             PurchaseService purchaseService2 = new PurchaseService();
@@ -194,15 +212,18 @@ namespace DreamGallery.Presentation.Presentation
                                             Console.WriteLine("Hisobingizdagi Balansni kiritng");
                                             UserUpdate.Balance = decimal.Parse(Console.ReadLine());
                                             await ServiceUser.UpdateAsync(UserUpdate);
+                                            Profile.Email = UserUpdate.Email;
+                                            Profile.Password = UserUpdate.Password;
+
                                             break;
                                         case 6:
-                                            var UserServices = new UserService();
-                                            var Profiles = (await UserServices.GetAllAsync()).FirstOrDefault(e => e.Email == Auth.Email && e.Password == Auth.Password);
-                                            Console.WriteLine("Your FirstName " + Profiles.FirstName);
-                                            Console.WriteLine("Your LastName " + Profiles.LastName);
-                                            Console.WriteLine("Your Email " + Profiles.Email);
-                                            Console.WriteLine("Your Password " + Profiles.Password);
-                                            Console.WriteLine("Your Balance " + Profiles.Balance);
+                                            //var UserServices = new UserService();
+                                            //var Profiles = (await UserServices.GetAllAsync()).FirstOrDefault(e => e.Email == Auth.Email && e.Password == Auth.Password);
+                                            Console.WriteLine("Your FirstName " + Profile.FirstName);
+                                            Console.WriteLine("Your LastName " + Profile.LastName);
+                                            Console.WriteLine("Your Email " + Profile.Email);
+                                            Console.WriteLine("Your Password " + Profile.Password);
+                                            Console.WriteLine("Your Balance " + Profile.Balance);
                                             break;
                                         case 7:
                                             userLoop = false;
@@ -213,7 +234,10 @@ namespace DreamGallery.Presentation.Presentation
 
                             case AuthResult.ArtistAuthenticated:
                                 var ArtistLoop = true;
-                                while(ArtistLoop)
+                                ArtistService artistService = new ArtistService();
+                                var ArtistProfile = (await artistService.GetAllAsync()).FirstOrDefault(e => e.Email == Auth.Email && e.Password == Auth.Password);
+
+                                while (ArtistLoop)
                                 {
                                     Console.WriteLine("1 => Add Artwork");
                                     Console.WriteLine("2 => My Artworks");
@@ -223,9 +247,9 @@ namespace DreamGallery.Presentation.Presentation
                                     Console.WriteLine("6 => Update My Profile");
                                     Console.WriteLine("7 => Log Out");
                                     var num5 = int.Parse(Console.ReadLine());
-                                    ArtistService artistService = new ArtistService();
-                                    var ArtistProfile = (await artistService.GetAllAsync()).FirstOrDefault(e => e.Email == Auth.Email && e.Password == Auth.Password);
-                                    switch(num5)
+
+
+                                    switch (num5)
                                     {
                                         case 1:
                                             ArtworkService ServiceForArtwork = new ArtworkService();
@@ -266,9 +290,9 @@ namespace DreamGallery.Presentation.Presentation
                                             }
                                             break;
                                         case 3:
-                                            PurchaseService ServiceForPurchase = new PurchaseService();
-                                            var SoldArtworks = await ServiceForPurchase.GetMyAllPurchasedArtsAsync(ArtistProfile.Id);
-                                            foreach (var art in SoldArtworks)
+                                            PurchaseService ServiceForPurchases = new PurchaseService();
+                                            var SoldArtwork = await ServiceForPurchases.GetMyAllPurchasedArtsAsync(ArtistProfile.Id);
+                                            foreach (var art in SoldArtwork)
                                             {
                                                     Console.WriteLine("_____________________________________");
                                                     Console.WriteLine("Artwork Id: " + art.Id);
@@ -279,6 +303,47 @@ namespace DreamGallery.Presentation.Presentation
                                                     Console.WriteLine("Artwork Price: " + art.Price);
                                                     Console.WriteLine("_____________________________________");
                                             }
+                                            break;
+                                        case 4:
+                                            Console.WriteLine($"Your Balance is {ArtistProfile.Balance}");
+                                            break;
+                                       case 5:
+                                            Console.WriteLine($"Your FirstName is {ArtistProfile.FirstName}");
+                                            Console.WriteLine($"Your LastName is {ArtistProfile.LastName}");
+                                            Console.WriteLine($"Your Email is {ArtistProfile.Email}");
+                                            Console.WriteLine($"Your Password is {ArtistProfile.Password}");
+                                            Console.WriteLine($"Your Balance is {ArtistProfile.Balance}");
+                                            Console.WriteLine($"Your PhoneNumber is {ArtistProfile.PhoneNumber}");
+                                            Console.WriteLine("__________________________________________________");
+                                            break;
+                                        case 6:
+                                            // Update My Profile logic
+                                            ArtistForUpdateDto dto = new ArtistForUpdateDto();
+                                            dto.Id = ArtistProfile.Id;
+
+                                            Console.WriteLine("Enter Your Firstname");
+                                            dto.FirstName = Console.ReadLine();
+                                            Console.WriteLine("Enter Your Lastname");
+                                            dto.LastName = Console.ReadLine();
+                                            Console.WriteLine("Enter Your Email address");
+                                            dto.Email = Console.ReadLine();
+                                            Console.WriteLine("Enter Your Password");
+                                            dto.Password = Console.ReadLine();
+                                            Console.WriteLine("Enter Your PhoneNumber");
+                                            dto.PhoneNumber = Console.ReadLine();
+
+                                            // Only update the balance if necessary
+                                            dto.Balance = ArtistProfile.Balance;
+
+                                            var result10 = await artistService.UpdateAsync(dto);
+
+                                            // Update the ArtistProfile object with the new data
+                                            ArtistProfile.Email = result10.Email;
+                                            ArtistProfile.Password = result10.Password;
+
+                                            break;
+                                        case 7:
+                                            ArtistLoop = false;
                                             break;
                                     }
                                 }

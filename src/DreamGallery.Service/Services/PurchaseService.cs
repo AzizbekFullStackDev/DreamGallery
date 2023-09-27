@@ -68,10 +68,9 @@ namespace DreamGallery.Service.Services
 
             return Collection;
         }
-        public async Task<List<ArtworkForResultDto>> GetAllPurchasedArtsAsync()
+        public async Task<List<Purchase>> GetAllPurchasedArtsAsync()
         {
-            ArtworkService artworkService = new ArtworkService();
-            var AllArtwork = await artworkService.GetAllAsync();
+            var AllArtwork = await PurchaseRepository.SelectAllAsync();
             return AllArtwork;
         }
         public async Task GenerateIdAsync()

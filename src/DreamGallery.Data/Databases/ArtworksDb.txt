@@ -28,5 +28,15 @@
     "Id": 3,
     "CreatedAt": "2023-09-26T18:56:19.706368Z",
     "UpdatedAt": "2023-09-26T18:56:19.7063681Z"
+  },
+  {
+    "Title": "shodmon",
+    "ArtistId": 2,
+    "Desciption": "asdasda",
+    "Price": 321.0,
+    "Category": 5,
+    "Id": 4,
+    "CreatedAt": "2023-09-27T07:18:37.3014204Z",
+    "UpdatedAt": "2023-09-27T07:18:37.3014207Z"
   }
 ]

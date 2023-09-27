@@ -17,22 +17,22 @@
     "Email": "1",
     "Password": "1",
     "PhoneNumber": null,
-    "Balance": 0.0,
+    "Balance": 321321.0,
     "Role": 2,
     "Id": 2,
     "CreatedAt": "2023-09-26T09:22:27.1755744Z",
-    "UpdatedAt": "2023-09-26T09:22:27.1755744Z"
+    "UpdatedAt": "2023-09-27T07:21:08.4883104Z"
   },
   {
-    "FirstName": "Artist",
-    "LastName": "artist",
-    "Email": "5",
-    "Password": "5",
-    "PhoneNumber": null,
-    "Balance": 0.0,
+    "FirstName": "aa",
+    "LastName": "aa",
+    "Email": "bb",
+    "Password": "bb",
+    "PhoneNumber": "bb",
+    "Balance": 5000.0,
     "Role": 2,
     "Id": 3,
     "CreatedAt": "2023-09-26T18:55:46.5174318Z",
-    "UpdatedAt": "2023-09-26T18:55:46.517432Z"
+    "UpdatedAt": "2023-09-27T06:41:29.8963854Z"
   }
 ]

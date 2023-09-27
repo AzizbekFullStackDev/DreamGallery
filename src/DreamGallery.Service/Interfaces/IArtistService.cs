@@ -9,5 +9,7 @@ namespace DreamGallery.Service.Interfaces
         public Task<bool> RemoveAsync(long Id);
         public Task<ArtistForResultDto> GetByIdAsync(long Id);
         public Task<List<ArtistForResultDto>> GetAllAsync();
+        public Task<ArtistForResultDto> UpdateBalanceAsync(ArtistForUpdateDto dto);
+
     }
 }

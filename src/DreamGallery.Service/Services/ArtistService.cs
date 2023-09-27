@@ -26,6 +26,7 @@ namespace DreamGallery.Service.Services
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
+                PhoneNumber = dto.PhoneNumber,
                 Password = dto.Password,
                 Balance = dto.Balance,
                 Role = Domain.Enums.Roles.Artist,
@@ -38,6 +39,7 @@ namespace DreamGallery.Service.Services
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
+                PhoneNumber = dto.PhoneNumber,
                 Password = dto.Password,
                 Balance = dto.Balance,
                 Role = Domain.Enums.Roles.Artist,
@@ -59,6 +61,7 @@ namespace DreamGallery.Service.Services
                     Id = item.Id,
                     FirstName = item.FirstName,
                     LastName = item.LastName,
+                    PhoneNumber = item.PhoneNumber,
                     Email = item.Email,
                     Password = item.Password,
                     Balance = item.Balance,
@@ -84,6 +87,7 @@ namespace DreamGallery.Service.Services
                 FirstName = GetData.FirstName,
                 LastName = GetData.LastName,
                 Email = GetData.Email,
+                PhoneNumber = GetData.PhoneNumber,
                 Password = GetData.Password,
                 Balance = GetData.Balance,
                 Role = Domain.Enums.Roles.Artist,
@@ -116,6 +120,7 @@ namespace DreamGallery.Service.Services
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
+                PhoneNumber = dto.PhoneNumber,
                 Password = dto.Password,
                 Balance = dto.Balance,
                 UpdatedAt = DateTime.UtcNow,
@@ -130,6 +135,7 @@ namespace DreamGallery.Service.Services
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
+                PhoneNumber = dto.PhoneNumber,
                 Password = dto.Password,
                 Balance = dto.Balance,
                 Role = Domain.Enums.Roles.Artist,
@@ -150,6 +156,43 @@ namespace DreamGallery.Service.Services
                 var res = result[result.Count - 1];
                 _id = ++res.Id;
             }
+        }
+        public async Task<ArtistForResultDto> UpdateBalanceAsync(ArtistForUpdateDto dto)
+        {
+            var Check = await ArtistRepository.SelectByIdAsync(dto.Id);
+            if (Check == null)
+            {
+                throw new DreamGalleryException(404, "Not found");
+            }
+            var Artist = new Artist()
+            {
+                Id = Check.Id,
+                FirstName = Check.FirstName,
+                LastName = Check.LastName,
+                Email = Check.Email,
+                PhoneNumber = Check.PhoneNumber,
+                Password = Check.Password,
+                Balance = dto.Balance,
+                UpdatedAt = DateTime.UtcNow,
+                CreatedAt = Check.CreatedAt,
+                Role = Domain.Enums.Roles.Artist,
+
+            };
+            await ArtistRepository.UpdateAsync(Artist);
+
+            var result = new ArtistForResultDto()
+            {
+                FirstName = Check.FirstName,
+                LastName = Check.LastName,
+                Email = Check.Email,
+                PhoneNumber= Check.PhoneNumber,
+                Password = Check.Password,
+                Balance = Check.Balance,
+                Role = Domain.Enums.Roles.Artist,
+
+            };
+
+            return result;
         }
     }
 }
