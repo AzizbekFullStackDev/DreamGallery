@@ -20,7 +20,7 @@ namespace DreamGallery.Presentation.Presentation
                 Console.WriteLine("Login => 2");
                 int num = int.Parse(Console.ReadLine());
                 var artworkService = new ArtworkService();
-                var AllArtWorks = await artworkService.GetAllAsync();
+                var AllArtWorks = await artworkService.GetAllArtsAsync();
                 switch(num)
                 {
                     case 1:
@@ -47,11 +47,16 @@ namespace DreamGallery.Presentation.Presentation
                                 user.Email = registration.Email;
                                 user.Password = registration.Password;
                                 user.PhoneNumber = registration.Password;
-                                Console.WriteLine("To'lov ma'lumotlaringizni Kiriting");
-                                Console.WriteLine("1 => Payme");
-                                Console.WriteLine("2 => Paypal");
-                                Console.WriteLine("3 => Click");
-                                Console.WriteLine("4 => Oson");
+                                Console.WriteLine("╭──────────────────────────────────────────────╮");
+                                Console.WriteLine("│              To'lov Ma'lumotlari Tanlash     │");
+                                Console.WriteLine("├──────────────────────────────────────────────┤");
+                                Console.WriteLine("│  1 => Payme                                  │");
+                                Console.WriteLine("│  2 => Paypal                                 │");
+                                Console.WriteLine("│  3 => Click                                  │");
+                                Console.WriteLine("│  4 => Oson                                   │");
+                                Console.WriteLine("╰──────────────────────────────────────────────╯");
+
+
                                 user.PaymentMethod = (Method)Enum.Parse(typeof(Method), Console.ReadLine());
                                 Console.WriteLine("Hisobingizdagi Balansni kiritng");
                                 user.Balance = decimal.Parse(Console.ReadLine());
@@ -92,50 +97,61 @@ namespace DreamGallery.Presentation.Presentation
                                 var userLoop = true;
                                 while (userLoop)
                                 {
-                                    Console.WriteLine("1 => See All Artworks");
-                                    Console.WriteLine("2 => Search For Artworks");
-                                    Console.WriteLine("3 => Buy Artwork");
-                                    Console.WriteLine("4 => My Collections");
-                                    Console.WriteLine("5 => Update Profile");
-                                    Console.WriteLine("6 => See My Profile");
-                                    Console.WriteLine("7 => Log out");
+                                    Console.WriteLine("╔════════════════════════════════╗");
+                                    Console.WriteLine("║       Art Gallery Main Menu    ║");
+                                    Console.WriteLine("╠════════════════════════════════╣");
+                                    Console.WriteLine("║  1 => See All Artworks         ║");
+                                    Console.WriteLine("║  2 => Search For Artworks      ║");
+                                    Console.WriteLine("║  3 => Buy Artwork              ║");
+                                    Console.WriteLine("║  4 => My Collections           ║");
+                                    Console.WriteLine("║  5 => Update Profile           ║");
+                                    Console.WriteLine("║  6 => See My Profile           ║");
+                                    Console.WriteLine("║  7 => Log out                  ║");
+                                    Console.WriteLine("╚════════════════════════════════╝");
+
                                     int num3 = int.Parse(Console.ReadLine());
                                     ArtworkService artService = new ArtworkService();
                                     ArtistService artistService2 = new ArtistService();
                                     var selected = await artistService2.GetAllAsync();
-                                    var AllArtworks = await artService.GetAllAsync();
+                                    var AllArtworks = await artService.GetAllArtsAsync();
+                                    var AvailableArtworks = await artService.GetAllAsync();
                                     switch(num3)
                                     {
                                         case 1:
                                             
-                                            foreach (var art in AllArtworks)
+                                            foreach (var art in AvailableArtworks)
                                             {
-                                                Console.WriteLine("_____________________________________");
-                                                Console.WriteLine("Artwork Id: " + art.Id);
-                                                Console.WriteLine("Artwork Title: " + art.Title);
                                                 var name = selected.FirstOrDefault(e => e.Id == art.ArtistId);
-                                                Console.WriteLine("Created By: " + name.FirstName);
-                                                Console.WriteLine("Artwork Category: " + art.Category);
-                                                Console.WriteLine("Artwork Descripion: " + art.Desciption);
-                                                Console.WriteLine("Artwork Price: " + art.Price);
-                                                Console.WriteLine("_____________________________________");
+                                                Console.WriteLine("╔══════════════════════════════════════════════════════╗");
+                                                Console.WriteLine("║                    Artwork Information                ");
+                                                Console.WriteLine("╟──────────────────────────────────────────────────────");
+                                                Console.WriteLine("║  Artwork Id:        " + art.Id);
+                                                Console.WriteLine("║  Artwork Title:     " + art.Title);
+                                                Console.WriteLine("║  Created By:        " + name.FirstName);
+                                                Console.WriteLine("║  Artwork Category:  " + art.Category);
+                                                Console.WriteLine("║  Artwork Descripion:" + art.Desciption);
+                                                Console.WriteLine("║  Artwork Price:     " + art.Price);
+                                                Console.WriteLine("╚══════════════════════════════════════════════════════╝");
+
 
                                             }
                                             break;
                                             case 2:
                                             string search = Console.ReadLine();
-                                            var SearchResult = AllArtworks.Where(e => e.Title == search);
+                                            var SearchResult = AllArtworks.Where(e => e.Title.ToLower() == search.ToLower());
                                             foreach (var art in SearchResult)
                                             {
-                                                Console.WriteLine("_____________________________________");
-                                                Console.WriteLine("Artwork Id: " + art.Id);
-                                                Console.WriteLine("Artwork Title: " + art.Title);
                                                 var name = selected.FirstOrDefault(e => e.Id == art.ArtistId);
-                                                Console.WriteLine("Created By: " + name.FirstName);
-                                                Console.WriteLine("Artwork Category: " + art.Category);
-                                                Console.WriteLine("Artwork Descripion: " + art.Desciption);
-                                                Console.WriteLine("Artwork Price: " + art.Price);
-                                                Console.WriteLine("_____________________________________");
+                                                Console.WriteLine("╔══════════════════════════════════════════════════════╗");
+                                                Console.WriteLine("║                    Artwork Information                ");
+                                                Console.WriteLine("╟──────────────────────────────────────────────────────");
+                                                Console.WriteLine("║  Artwork Id:        " + art.Id);
+                                                Console.WriteLine("║  Artwork Title:     " + art.Title);
+                                                Console.WriteLine("║  Created By:        " + name.FirstName);
+                                                Console.WriteLine("║  Artwork Category:  " + art.Category);
+                                                Console.WriteLine("║  Artwork Descripion:" + art.Desciption);
+                                                Console.WriteLine("║  Artwork Price:     " + art.Price);
+                                                Console.WriteLine("╚══════════════════════════════════════════════════════╝");
 
                                             }
                                             break;
@@ -153,10 +169,13 @@ namespace DreamGallery.Presentation.Presentation
                                             var artists = new ArtistService(); 
                                             var SelectedArtist = (await artists.GetAllAsync()).FirstOrDefault(e => e.Id == GetArtWorkname.ArtistId);
 
-                                            PurchaseService ServiceForPurchase = new PurchaseService();
-                                            var SoldArtworks = await ServiceForPurchase.GetMyAllPurchasedArtsAsync(SelectedArtist.Id);
+                                            var Artworks = new ArtworkService();
+                                            var allArts = await Artworks.GetAllArtsAsync();
+
+                                            var result11 = allArts.Where(e => e.ArtistId == SelectedArtist.Id);
+
                                             var Balance = SelectedArtist.Balance;
-                                            foreach (var art in SoldArtworks)
+                                            foreach (var art in result11)
                                             {
                                                 Balance += art.Price;
                                             }
@@ -174,18 +193,21 @@ namespace DreamGallery.Presentation.Presentation
                                             var MyCollection = await purchaseService2.GetMyCollectionAsync(Profile.Id);
                                             foreach (var item in MyCollection)
                                             {
+                                                Console.WriteLine(item.ArtworkId);
                                                 var item2 = AllArtworks.Where(e => e.Id == item.ArtworkId);
-                                                foreach(var art in item2)
+                                                foreach (var art in item2)
                                                 {
-                                                    Console.WriteLine("_____________________________________");
-                                                    Console.WriteLine("Artwork Id: " + art.Id);
-                                                    Console.WriteLine("Artwork Title: " + art.Title);
                                                     var name = selected.FirstOrDefault(e => e.Id == art.ArtistId);
-                                                    Console.WriteLine("Created By: " + name.FirstName);
-                                                    Console.WriteLine("Artwork Category: " + art.Category);
-                                                    Console.WriteLine("Artwork Descripion: " + art.Desciption);
-                                                    Console.WriteLine("Artwork Price: " + art.Price);
-                                                    Console.WriteLine("_____________________________________");
+                                                    Console.WriteLine("╔══════════════════════════════════════════════════════╗");
+                                                    Console.WriteLine("║                    Artwork Information                ");
+                                                    Console.WriteLine("╟──────────────────────────────────────────────────────");
+                                                    Console.WriteLine("║  Artwork Id:        " + art.Id);
+                                                    Console.WriteLine("║  Artwork Title:     " + art.Title);
+                                                    Console.WriteLine("║  Created By:        " + name.FirstName);
+                                                    Console.WriteLine("║  Artwork Category:  " + art.Category);
+                                                    Console.WriteLine("║  Artwork Descripion:" + art.Desciption);
+                                                    Console.WriteLine("║  Artwork Price:     " + art.Price);
+                                                    Console.WriteLine("╚══════════════════════════════════════════════════════╝");
                                                 }
                                             }
                                             break;
@@ -193,25 +215,39 @@ namespace DreamGallery.Presentation.Presentation
                                             var UserUpdate = new UserForUpdateDto();
                                             var ServiceUser = new UserService();
                                             UserUpdate.Id = Profile.Id;
-                                            Console.WriteLine("Enter Your Firstname");
+                                            Console.WriteLine("╔════════════════════════════════════════╗");
+                                            Console.WriteLine("║           Update Your Profile          ║");
+                                            Console.WriteLine("╠════════════════════════════════════════╣");
+                                            Console.Write("║  Enter Your Firstname:                  ");
                                             UserUpdate.FirstName = Console.ReadLine();
-                                            Console.WriteLine("Enter Your Lastname");
+                                            Console.Write("║  Enter Your Lastname:                   ");
                                             UserUpdate.LastName = Console.ReadLine();
-                                            Console.WriteLine("Enter Your Email address");
+                                            Console.Write("║  Enter Your Email address:              ");
                                             UserUpdate.Email = Console.ReadLine();
-                                            Console.WriteLine("Enter Your Password");
+                                            Console.Write("║  Enter Your Password:                   ");
                                             UserUpdate.Password = Console.ReadLine();
-                                            Console.WriteLine("Enter Your PhoneNumber");
+                                            Console.Write("║  Enter Your PhoneNumber:                ");
                                             UserUpdate.PhoneNumber = Console.ReadLine();
-                                            Console.WriteLine("To'lov ma'lumotlaringizni Kiriting");
-                                            Console.WriteLine("1 => Payme");
-                                            Console.WriteLine("2 => Paypal");
-                                            Console.WriteLine("3 => Click");
-                                            Console.WriteLine("4 => Oson");
+                                            Console.WriteLine("╚════════════════════════════════════════╝");
+
+                                            Console.WriteLine("╔════════════════════════════════════════╗");
+                                            Console.WriteLine("║          Payment Information           ║");
+                                            Console.WriteLine("╠════════════════════════════════════════╣");
+                                            Console.WriteLine("║  1 => Payme                            ║");
+                                            Console.WriteLine("║  2 => Paypal                           ║");
+                                            Console.WriteLine("║  3 => Click                            ║");
+                                            Console.WriteLine("║  4 => Oson                             ║");
+                                            Console.Write("║  Choose Payment Method (1/2/3/4):      ");
                                             UserUpdate.PaymentMethod = (Method)Enum.Parse(typeof(Method), Console.ReadLine());
-                                            Console.WriteLine("Hisobingizdagi Balansni kiritng");
+                                            Console.Write("║  Enter Your Account Balance:             ");
                                             UserUpdate.Balance = decimal.Parse(Console.ReadLine());
+                                            Console.WriteLine("╚════════════════════════════════════════╝");
+
                                             await ServiceUser.UpdateAsync(UserUpdate);
+                                            Profile.FirstName = UserUpdate.FirstName;
+                                            Profile.LastName = UserUpdate.LastName;
+                                            Profile.PhoneNumber = UserUpdate.PhoneNumber;
+                                            Profile.PaymentMethod = UserUpdate.PaymentMethod;
                                             Profile.Email = UserUpdate.Email;
                                             Profile.Password = UserUpdate.Password;
 
@@ -219,11 +255,16 @@ namespace DreamGallery.Presentation.Presentation
                                         case 6:
                                             //var UserServices = new UserService();
                                             //var Profiles = (await UserServices.GetAllAsync()).FirstOrDefault(e => e.Email == Auth.Email && e.Password == Auth.Password);
-                                            Console.WriteLine("Your FirstName " + Profile.FirstName);
-                                            Console.WriteLine("Your LastName " + Profile.LastName);
-                                            Console.WriteLine("Your Email " + Profile.Email);
-                                            Console.WriteLine("Your Password " + Profile.Password);
-                                            Console.WriteLine("Your Balance " + Profile.Balance);
+                                            Console.WriteLine("╔══════════════════════════════════════════════════════╗");
+                                            Console.WriteLine($"║  Your FirstName:   {Profile.FirstName}                              ║");
+                                            Console.WriteLine($"║  Your LastName:    {Profile.LastName}                               ║");
+                                            Console.WriteLine($"║  Your Email:       {Profile.Email}                               ║");
+                                            Console.WriteLine($"║  Your Password:    {Profile.Password}                               ║");
+                                            Console.WriteLine($"║  Your Balance:     ${Profile.Balance}                            ║");
+                                            Console.WriteLine("╚══════════════════════════════════════════════════════╝");
+
+
+
                                             break;
                                         case 7:
                                             userLoop = false;
@@ -239,13 +280,18 @@ namespace DreamGallery.Presentation.Presentation
 
                                 while (ArtistLoop)
                                 {
-                                    Console.WriteLine("1 => Add Artwork");
-                                    Console.WriteLine("2 => My Artworks");
-                                    Console.WriteLine("3 => Sold Artworks");
-                                    Console.WriteLine("4 => See My Balance");
-                                    Console.WriteLine("5 => See My Profile");
-                                    Console.WriteLine("6 => Update My Profile");
-                                    Console.WriteLine("7 => Log Out");
+                                    Console.WriteLine("╔══════════════════════════════════════════╗");
+                                    Console.WriteLine("║                 Main Menu                ║");
+                                    Console.WriteLine("╟──────────────────────────────────────────╢");
+                                    Console.WriteLine("║  1 => Add Artwork                        ║");
+                                    Console.WriteLine("║  2 => My Artworks                        ║");
+                                    Console.WriteLine("║  3 => Sold Artworks                      ║");
+                                    Console.WriteLine("║  4 => See My Balance                     ║");
+                                    Console.WriteLine("║  5 => See My Profile                     ║");
+                                    Console.WriteLine("║  6 => Update My Profile                  ║");
+                                    Console.WriteLine("║  7 => Log Out                            ║");
+                                    Console.WriteLine("╚══════════════════════════════════════════╝");
+
                                     var num5 = int.Parse(Console.ReadLine());
 
 
@@ -255,38 +301,46 @@ namespace DreamGallery.Presentation.Presentation
                                             ArtworkService ServiceForArtwork = new ArtworkService();
                                             ArtworkForCreationDto artDto = new ArtworkForCreationDto();
                                             artDto.ArtistId = ArtistProfile.Id;
-                                            Console.WriteLine("Enter The Artwork Title");
+                                            Console.WriteLine("╔════════════════════════════════════════╗");
+                                            Console.WriteLine("║           Add New Artwork              ║");
+                                            Console.WriteLine("╟────────────────────────────────────────╢");
+                                            Console.Write("║  Enter The Artwork Title:              ");
                                             artDto.Title = Console.ReadLine();
-
-                                            Console.WriteLine("Enter The Artwork Description");
+                                            Console.Write("║  Enter The Artwork Description:        ");
                                             artDto.Desciption = Console.ReadLine();
-
-                                            Console.WriteLine("Enter The Artwork Category");
-                                            Console.WriteLine("1 => Grafitti");
-                                            Console.WriteLine("2 => StreetArt");
-                                            Console.WriteLine("3 => AbstractExpressionism");
-                                            Console.WriteLine("4 => Calligraphy");
-                                            Console.WriteLine("5 => Mosaic");
+                                            Console.WriteLine("║  Enter The Artwork Category:           ");
+                                            Console.WriteLine("║  1 => Grafitti");
+                                            Console.WriteLine("║  2 => StreetArt");
+                                            Console.WriteLine("║  3 => AbstractExpressionism");
+                                            Console.WriteLine("║  4 => Calligraphy");
+                                            Console.WriteLine("║  5 => Mosaic");
+                                            Console.Write("║  Choose Artwork Category (1/2/3/4/5): ");
                                             artDto.Category = (ArtCategory)Enum.Parse(typeof(ArtCategory), Console.ReadLine());
-
-                                            Console.WriteLine("Enter The Artwork Price");
+                                            Console.Write("║  Enter The Artwork Price:              ");
                                             artDto.Price = decimal.Parse(Console.ReadLine());
+                                            Console.WriteLine("╚════════════════════════════════════════╝");
+
 
 
                                             await ServiceForArtwork.CreateAsync(artDto);
 
                                             break;
                                         case 2:
-                                            var MyArtworks = AllArtWorks.Where(e => e.ArtistId == ArtistProfile.Id);
+                                            var artworkService2 = new ArtworkService();
+                                            var AllArtWorks2 = await artworkService2.GetAllArtsAsync();
+                                            var MyArtworks = AllArtWorks2.Where(e => e.ArtistId == ArtistProfile.Id);
                                             foreach (var art in MyArtworks)
                                             {
-                                                Console.WriteLine("_____________________________________");
-                                                Console.WriteLine("Artwork Id: " + art.Id);
-                                                Console.WriteLine("Artwork Title: " + art.Title);
-                                                Console.WriteLine("Artwork Category: " + art.Category);
-                                                Console.WriteLine("Artwork Descripion: " + art.Desciption);
-                                                Console.WriteLine("Artwork Price: " + art.Price);
-                                                Console.WriteLine("_____________________________________");
+                                                Console.WriteLine("╔════════════════════════════════════════════╗");
+                                                Console.WriteLine("║               Artwork Information          ║");
+                                                Console.WriteLine("╟────────────────────────────────────────────╢");
+                                                Console.WriteLine($"║  Artwork Id:        {art.Id}");
+                                                Console.WriteLine($"║  Artwork Title:     {art.Title}");
+                                                Console.WriteLine($"║  Artwork Category:  {art.Category}");
+                                                Console.WriteLine($"║  Artwork Description: {art.Desciption}");
+                                                Console.WriteLine($"║  Artwork Price:     ${art.Price}");
+                                                Console.WriteLine("╚════════════════════════════════════════════╝");
+
                                             }
                                             break;
                                         case 3:
@@ -294,14 +348,17 @@ namespace DreamGallery.Presentation.Presentation
                                             var SoldArtwork = await ServiceForPurchases.GetMyAllPurchasedArtsAsync(ArtistProfile.Id);
                                             foreach (var art in SoldArtwork)
                                             {
-                                                    Console.WriteLine("_____________________________________");
-                                                    Console.WriteLine("Artwork Id: " + art.Id);
-                                                    Console.WriteLine("Artwork Title: " + art.Title);
-                                                    Console.WriteLine("Artwork Category: " + art.Category);
-                                                    Console.WriteLine("Artwork Descripion: " + art.Desciption);
-                                                    Console.WriteLine("Artwork Price: " + art.Customer);
-                                                    Console.WriteLine("Artwork Price: " + art.Price);
-                                                    Console.WriteLine("_____________________________________");
+                                                Console.WriteLine("╔══════════════════════════════════════════╗");
+                                                Console.WriteLine("║             Artwork Information            ║");
+                                                Console.WriteLine("╟────────────────────────────────────────────╢");
+                                                Console.WriteLine($"║  Artwork Id:        {art.Id}");
+                                                Console.WriteLine($"║  Artwork Title:     {art.Title}");
+                                                Console.WriteLine($"║  Artwork Category:  {art.Category}");
+                                                Console.WriteLine($"║  Artwork Description:{art.Desciption}");
+                                                Console.WriteLine($"║  Customer:          {art.Customer}");
+                                                Console.WriteLine($"║  Artwork Price:     {art.Price}");
+                                                Console.WriteLine("╚══════════════════════════════════════════╝");
+
                                             }
                                             break;
                                         case 4:
@@ -338,6 +395,9 @@ namespace DreamGallery.Presentation.Presentation
                                             var result10 = await artistService.UpdateAsync(dto);
 
                                             // Update the ArtistProfile object with the new data
+                                            ArtistProfile.FirstName = result10.FirstName;
+                                            ArtistProfile.LastName = result10.LastName;
+                                            ArtistProfile.PhoneNumber = result10.PhoneNumber;
                                             ArtistProfile.Email = result10.Email;
                                             ArtistProfile.Password = result10.Password;
 

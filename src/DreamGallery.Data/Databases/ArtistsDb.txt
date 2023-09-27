@@ -21,7 +21,7 @@
     "Role": 2,
     "Id": 2,
     "CreatedAt": "2023-09-26T09:22:27.1755744Z",
-    "UpdatedAt": "2023-09-27T07:21:08.4883104Z"
+    "UpdatedAt": "2023-09-27T09:20:24.2629628Z"
   },
   {
     "FirstName": "aa",
@@ -34,5 +34,17 @@
     "Id": 3,
     "CreatedAt": "2023-09-26T18:55:46.5174318Z",
     "UpdatedAt": "2023-09-27T06:41:29.8963854Z"
+  },
+  {
+    "FirstName": "9",
+    "LastName": "9",
+    "Email": "9",
+    "Password": "9",
+    "PhoneNumber": "9",
+    "Balance": 1119.0,
+    "Role": 2,
+    "Id": 4,
+    "CreatedAt": "2023-09-27T09:16:41.6825832Z",
+    "UpdatedAt": "2023-09-27T09:38:03.0532605Z"
   }
 ]

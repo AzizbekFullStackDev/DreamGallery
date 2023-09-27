@@ -38,5 +38,85 @@
     "Id": 4,
     "CreatedAt": "2023-09-27T07:18:37.3014204Z",
     "UpdatedAt": "2023-09-27T07:18:37.3014207Z"
+  },
+  {
+    "Title": "1",
+    "ArtistId": 2,
+    "Desciption": "1",
+    "Price": 1.0,
+    "Category": 1,
+    "Id": 5,
+    "CreatedAt": "2023-09-27T08:18:40.824219Z",
+    "UpdatedAt": "2023-09-27T08:18:40.8242191Z"
+  },
+  {
+    "Title": "TT",
+    "ArtistId": 1,
+    "Desciption": "TTT",
+    "Price": 3443.0,
+    "Category": 3,
+    "Id": 6,
+    "CreatedAt": "2023-09-27T08:19:42.0840551Z",
+    "UpdatedAt": "2023-09-27T08:19:42.0840552Z"
+  },
+  {
+    "Title": "21",
+    "ArtistId": 1,
+    "Desciption": "12",
+    "Price": 512.0,
+    "Category": 5,
+    "Id": 6,
+    "CreatedAt": "2023-09-27T08:52:36.4804469Z",
+    "UpdatedAt": "2023-09-27T08:52:36.4804471Z"
+  },
+  {
+    "Title": "9",
+    "ArtistId": 4,
+    "Desciption": "9",
+    "Price": 9.0,
+    "Category": 9,
+    "Id": 7,
+    "CreatedAt": "2023-09-27T09:16:52.2568332Z",
+    "UpdatedAt": "2023-09-27T09:16:52.2568333Z"
+  },
+  {
+    "Title": "cool",
+    "ArtistId": 4,
+    "Desciption": "adas",
+    "Price": 132.0,
+    "Category": 1,
+    "Id": 8,
+    "CreatedAt": "2023-09-27T09:23:52.4820069Z",
+    "UpdatedAt": "2023-09-27T09:23:52.482007Z"
+  },
+  {
+    "Title": "zzz",
+    "ArtistId": 4,
+    "Desciption": "hhh",
+    "Price": 543.0,
+    "Category": 5,
+    "Id": 9,
+    "CreatedAt": "2023-09-27T09:26:31.2866349Z",
+    "UpdatedAt": "2023-09-27T09:26:31.2866351Z"
+  },
+  {
+    "Title": "eee",
+    "ArtistId": 4,
+    "Desciption": "fff",
+    "Price": 324.0,
+    "Category": 4,
+    "Id": 10,
+    "CreatedAt": "2023-09-27T09:29:03.2260965Z",
+    "UpdatedAt": "2023-09-27T09:29:03.2260966Z"
+  },
+  {
+    "Title": "rewr",
+    "ArtistId": 4,
+    "Desciption": "ewrwe",
+    "Price": 111.0,
+    "Category": 4,
+    "Id": 11,
+    "CreatedAt": "2023-09-27T09:29:35.1037143Z",
+    "UpdatedAt": "2023-09-27T09:29:35.1037143Z"
   }
 ]

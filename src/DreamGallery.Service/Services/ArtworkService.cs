@@ -47,6 +47,7 @@ namespace DreamGallery.Service.Services
 
         }
 
+
         public async Task<List<ArtworkForResultDto>> GetAllAsync()
         {
             var Purchase = new PurchaseService();
@@ -75,6 +76,7 @@ namespace DreamGallery.Service.Services
 
             return ls;
         }
+
 
 
         public async Task<ArtworkForResultDto> GetByIdAsync(long Id)
@@ -153,6 +155,30 @@ namespace DreamGallery.Service.Services
                 var res = result[result.Count - 1];
                 _id = ++res.Id;
             }
+        }
+
+        public async Task<List<ArtworkForResultDto>> GetAllArtsAsync()
+        {
+            Repository<Artwork> ArtworkRepository = new Repository<Artwork>();
+            var GetALlData = await ArtworkRepository.SelectAllAsync();
+            List<ArtworkForResultDto> ls = new List<ArtworkForResultDto>();
+            foreach (var item in GetALlData)
+            {
+                ArtworkForResultDto dto = new ArtworkForResultDto()
+                {
+                    Id = item.Id,
+                    ArtistId = item.ArtistId,
+                    Title = item.Title,
+                    Category = item.Category,
+                    Desciption = item.Desciption,
+                    Price = item.Price,
+
+
+                };
+                ls.Add(dto);
+
+            }
+            return ls;
         }
     }
 }

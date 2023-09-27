@@ -33,10 +33,42 @@
   },
   {
     "UserId": 3,
-    "ArtworkId": 4,
+    "ArtworkId": 6,
     "PurchaseDate": "2023-09-27T07:21:08.4631624Z",
     "Id": 5,
     "CreatedAt": "2023-09-27T07:21:08.4631616Z",
     "UpdatedAt": "2023-09-27T07:21:08.4631617Z"
+  },
+  {
+    "UserId": 2,
+    "ArtworkId": 6,
+    "PurchaseDate": "2023-09-27T08:46:03.8267306Z",
+    "Id": 6,
+    "CreatedAt": "2023-09-27T08:46:03.8266066Z",
+    "UpdatedAt": "2023-09-27T08:46:03.8266067Z"
+  },
+  {
+    "UserId": 4,
+    "ArtworkId": 7,
+    "PurchaseDate": "2023-09-27T09:18:15.5087593Z",
+    "Id": 7,
+    "CreatedAt": "2023-09-27T09:18:15.5086093Z",
+    "UpdatedAt": "2023-09-27T09:18:15.5086094Z"
+  },
+  {
+    "UserId": 4,
+    "ArtworkId": 4,
+    "PurchaseDate": "2023-09-27T09:20:24.2104472Z",
+    "Id": 8,
+    "CreatedAt": "2023-09-27T09:20:24.2103142Z",
+    "UpdatedAt": "2023-09-27T09:20:24.2103143Z"
+  },
+  {
+    "UserId": 2,
+    "ArtworkId": 11,
+    "PurchaseDate": "2023-09-27T09:38:03.0002211Z",
+    "Id": 9,
+    "CreatedAt": "2023-09-27T09:38:02.9997092Z",
+    "UpdatedAt": "2023-09-27T09:38:02.9997096Z"
   }
 ]

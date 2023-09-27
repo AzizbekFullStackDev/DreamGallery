@@ -31,8 +31,9 @@ namespace DreamGallery.Service.Services
         }
         public async Task<List<ArtworkForSold>> GetMyAllPurchasedArtsAsync(long Id)
         {
+            Repository<Purchase> PurchaseRepository = new Repository<Purchase>();
             var ArtworkService = new ArtworkService();
-            var ArtworkAll = await ArtworkService.GetAllAsync();
+            var ArtworkAll = await ArtworkService.GetAllArtsAsync();
 
             var UserService = new UserService();
             var AllUsers = await UserService.GetAllAsync();
