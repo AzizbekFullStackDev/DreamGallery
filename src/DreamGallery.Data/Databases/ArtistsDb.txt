@@ -36,15 +36,15 @@
     "UpdatedAt": "2023-09-27T06:41:29.8963854Z"
   },
   {
-    "FirstName": "9",
-    "LastName": "9",
-    "Email": "9",
-    "Password": "9",
-    "PhoneNumber": "9",
+    "FirstName": "gfd",
+    "LastName": "gfd",
+    "Email": "gfd",
+    "Password": "gdf",
+    "PhoneNumber": "342432",
     "Balance": 1119.0,
     "Role": 2,
     "Id": 4,
     "CreatedAt": "2023-09-27T09:16:41.6825832Z",
-    "UpdatedAt": "2023-09-27T09:38:03.0532605Z"
+    "UpdatedAt": "2023-09-27T09:57:38.0348222Z"
   }
 ]
